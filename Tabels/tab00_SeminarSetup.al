@@ -11,14 +11,17 @@ table 50100 "CSD Seminar Setup"
         field(20; "Seminar Nos."; Code[20])
         {
             caption = 'Seminar Nos.';
+            TableRelation = "No. Series";
         }
         field(30; "Seminar Registration Nos."; Code[20])
         {
             caption = 'Seminar Registration Nos.';
+            TableRelation = "No. Series";
         }
         field(40; "Posted Seminar Reg. Nos."; Code[20])
         {
             caption = 'Seminar Registration Nos.';
+            TableRelation = "No. Series";
         }
 
 
