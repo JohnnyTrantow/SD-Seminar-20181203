@@ -116,6 +116,7 @@ table 50101 "CSD Seminar"
         GenProdPostingGroup: Record "Gen. Product Posting Group";
         VatProdPostingGroup: Record "VAT Product Posting Group";
         NoSeriesMgt: Codeunit NoSeriesManagement;
+        Mess001: Label 'New seminar has been setup';
 
 
     trigger OnInsert()
@@ -125,10 +126,11 @@ table 50101 "CSD Seminar"
             SeminarSetup.TestField("Seminar Nos.");
             NoSeriesMgt.InitSeries(SeminarSetup."Seminar Nos.", xRec."No. Series", 0D, "No.", "No. Series");
         end;
+        message(Mess001);
     end;
 
     trigger OnModify()
-    
+
     begin
         "Last Date Modified" := today;
 
