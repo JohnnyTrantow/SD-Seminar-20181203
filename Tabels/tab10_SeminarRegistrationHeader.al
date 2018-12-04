@@ -351,6 +351,9 @@ table 50110 "CSD Seminar Reg. Header"
             NoSeriesMgt.InitSeries(SeminarSetup."Seminar Registration Nos.", xRec."No. Series", 0D, "No.", "No. Series");
         end;
         initrecord;
+        if GetFilter("Seminar No.") <> '' then
+            if GetRangeMin("Seminar No.") = GetRangeMax("Seminar No.") then
+                validate("Seminar No.", GetRangeMin("Seminar No."));
     end;
 
     local procedure InitRecord();
